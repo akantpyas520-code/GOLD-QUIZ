@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111111"><meta name="description" content="بازی آنلاین اطلاعات عمومی GOLD QUIZ">
+  <link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/style.css">
+  <title>GOLD QUIZ</title>
+</head>
+<body>
+<header><div class="brand">GOLD <span>QUIZ</span></div><button id="themeBtn" class="ghost" aria-label="تغییر پوسته">◐</button></header>
+<main>
+  <section class="hero card"><p class="eyebrow">بازی آنلاین اطلاعات عمومی</p><h1>آماده‌ای دانشت رو بسنجی؟</h1><p>بازی کن، امتیاز بگیر و رکوردت را ثبت کن.</p><button id="startBtn" class="primary">شروع مسابقه</button></section>
+  <section id="quiz" class="card hidden">
+    <div class="row between"><b>مسابقه</b><span id="progress">۰ / ۰</span></div>
+    <div class="progress"><i id="bar"></i></div><h2 id="question">در حال دریافت سؤال...</h2>
+    <div id="options" class="options"></div><p id="feedback" role="status"></p>
+    <button id="nextBtn" class="primary hidden">سؤال بعدی</button>
+  </section>
+  <section id="result" class="card hidden"><p class="eyebrow">نتیجه مسابقه</p><h2 id="scoreText"></h2><button id="againBtn" class="primary">دوباره بازی کن</button></section>
+  <section class="card profile">
+    <h2>پروفایل بازیکن</h2>
+    <label>نام نمایشی<input id="nickname" maxlength="40" placeholder="نام شما"></label>
+    <label>چهار رقم آخر کارت (اختیاری)<input id="cardLast4" inputmode="numeric" maxlength="4" placeholder="مثلاً ۱۲۳۴"></label>
+    <p class="note">برای امنیت، شماره کامل کارت بانکی را اینجا وارد نکنید. پرداخت واقعی باید از درگاه بانکی معتبر انجام شود؛ این نسخه اطلاعات کامل کارت یا رمز را ذخیره نمی‌کند.</p>
+    <button id="saveProfile" class="secondary">ذخیره پروفایل</button><p id="profileMsg" class="note"></p>
+  </section>
+  <section class="card admin">
+    <div class="row between"><h2>مدیریت</h2><span class="tag">مدیر سایت</span></div>
+    <div id="loginBox">
+      <label>ایمیل مدیر<input id="adminEmail" type="email" autocomplete="username"></label>
+      <label>رمز عبور<input id="adminPassword" type="password" autocomplete="current-password"></label>
+      <button id="loginBtn" class="secondary">ورود مدیر</button>
+    </div>
+    <div id="adminBox" class="hidden">
+      <div id="stats" class="stats"></div><h3>افزودن سؤال</h3>
+      <label>متن سؤال<input id="newQuestion" maxlength="500"></label>
+      <div class="grid">
+        <label>گزینه ۱<input class="newOption"></label><label>گزینه ۲<input class="newOption"></label>
+        <label>گزینه ۳<input class="newOption"></label><label>گزینه ۴<input class="newOption"></label>
+      </div>
+      <label>شماره پاسخ صحیح<select id="correctIndex"><option value="0">گزینه ۱</option><option value="1">گزینه ۲</option><option value="2">گزینه ۳</option><option value="3">گزینه ۴</option></select></label>
+      <button id="addQuestion" class="primary">ثبت سؤال</button><p id="adminMsg" class="note"></p>
+      <h3>سؤال‌های ثبت‌شده</h3><div id="questionList"></div>
+      <button id="logoutBtn" class="secondary">خروج مدیر</button>
+    </div>
+  </section>
+</main>
+<footer>© GOLD QUIZ · نسخه اولیه</footer>
+<script src="/app.js"></script>
+</body></html>
